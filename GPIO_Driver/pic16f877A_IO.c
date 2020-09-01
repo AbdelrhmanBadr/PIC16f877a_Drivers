@@ -174,44 +174,24 @@ void DIO_portDirection(portName port , pinDirection direction)
             
     }
 }
-void DIO_portWrite (portName port , digitalState state)
+void DIO_portWrite (portName port , uint8 state)
 {
     switch(port)
     {
         case A:
-            switch(state)
-            {
-                case HIGH: PORTA = PORT_HIGH; break;
-                case LOW : PORTA = PORT_LOW; break;   
-            }
+            PORTA = state;
             break;
         case B:
-            switch(state)
-            {
-                case HIGH: PORTB = PORT_HIGH; break;
-                case LOW : PORTB = PORT_LOW; break;   
-            }
+            PORTB = state;
             break;
         case C:
-            switch(state)
-            {
-                case HIGH: PORTC = PORT_HIGH; break;
-                case LOW : PORTC = PORT_LOW; break;   
-            }
+            PORTC = state;
             break;
         case D:
-            switch(state)
-            {
-                case HIGH: PORTD = PORT_HIGH; break;
-                case LOW : PORTD = PORT_LOW; break;   
-            }
+            PORTD = state;
             break;
         case E:
-            switch(state)
-            {
-                case HIGH: PORTE = PORT_HIGH; break;
-                case LOW : PORTE = PORT_LOW; break;   
-            }
+            PORTE = state;
             break;    
     }
 }

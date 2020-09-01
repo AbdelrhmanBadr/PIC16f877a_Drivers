@@ -77,7 +77,7 @@ void DIO_portDirection(portName port , pinDirection direction);
  * @return: void
  * @example: To make the output of the port C is high --> DIO_portWrite(C, HIGH);
  */
-void DIO_portWrite (portName port , digitalState state);
+void DIO_portWrite (portName port , uint8 state);
 /*
  * @breif:DIO_portRead() is a function that used to read the input digital signal at input port
  * @para: Port name [A-B-C-D-E]
