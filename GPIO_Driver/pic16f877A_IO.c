@@ -145,7 +145,12 @@ void DIO_portDirection(portName port , pinDirection direction)
 {
     switch(port)
     {
-        case A: 
+        case A:
+            /*Disable ADC for this port except AN0*/
+            setBit(ADCON1,PCFG3);
+            setBit(ADCON1,PCFG2);
+            setBit(ADCON1,PCFG1);
+            clearBit(ADCON1,PCFG0);
             switch(direction)
             {
                 case INPUT : TRISA = TRIS_INPUT; break;  
@@ -174,6 +179,10 @@ void DIO_portDirection(portName port , pinDirection direction)
             }
             break;
         case E: 
+            setBit(ADCON1,PCFG3);
+            setBit(ADCON1,PCFG2);
+            clearBit(ADCON1,PCFG1);
+            clearBit(ADCON1,PCFG0);
             switch(direction)
             {
                 case INPUT : TRISE = TRIS_INPUT; break;  
