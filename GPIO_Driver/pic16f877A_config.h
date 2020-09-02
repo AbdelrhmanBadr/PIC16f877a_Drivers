@@ -120,8 +120,14 @@
 #define PS2     2
 #define PS1     1
 #define PS0     0
-
-
+/*ADCON1 REGISTER*/
+#define ADCON1  (*(volatile uint8 *)(0X9F))
+#define ADFM    7
+#define ADCS2   6
+#define PCFG3   3
+#define PCFG2   2
+#define PCFG1   1
+#define PCFG0   0
 
 
 

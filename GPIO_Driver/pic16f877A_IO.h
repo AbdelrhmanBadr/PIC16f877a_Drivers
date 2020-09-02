@@ -42,6 +42,8 @@ typedef enum
  * @para: pin number [PIN0,PIN1,PIN2,...,PIN7]
  * @para: direction of pin [OUTPUT - INPUT]
  * @return: void
+ * @note: for  port E if you used any pin  of portE as digital pin it will make all port's pin as digital pins and ADC will be disabled
+ * @note: for portA if you used any pin of portA as digital pin IT WILL DISABLE ADC FOR ALL PINS FOR THE MICROCONTROLLER EXCEPT AN0
  * @example: To set B0 as input pin --> DIO_pinDirection (B,PIN0,INPUT)
  */
 void DIO_pinDirection(portName port, pinNumber pin , pinDirection direction);

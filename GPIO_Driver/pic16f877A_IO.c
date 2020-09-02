@@ -19,7 +19,12 @@ void DIO_pinDirection(portName port, pinNumber pin , pinDirection direction)
 {
     switch(port)
     {
-        case A:     
+        case A:  
+            /*Disable ADC for this port except AN0*/
+            setBit(ADCON1,PCFG3);
+            setBit(ADCON1,PCFG2);
+            setBit(ADCON1,PCFG1);
+            clearBit(ADCON1,PCFG0);
             switch(direction)
             {
                 case INPUT : setBit(TRISA,pin);break;
@@ -52,6 +57,11 @@ void DIO_pinDirection(portName port, pinNumber pin , pinDirection direction)
             }
             break;
         case E:
+            /*Disable ADC for this port*/
+            setBit(ADCON1,PCFG3);
+            setBit(ADCON1,PCFG2);
+            clearBit(ADCON1,PCFG1);
+            clearBit(ADCON1,PCFG0);
             switch(direction)
             {
                 case INPUT : setBit(TRISE,pin);break;
