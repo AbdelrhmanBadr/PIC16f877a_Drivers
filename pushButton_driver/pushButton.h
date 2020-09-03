@@ -17,8 +17,8 @@ typedef enum
 
 typedef enum
 {
-    RELEASED,
-    PRESSED,        
+    pushButtonReleased,
+    pushButtonPressed,        
 }pushButton_state;
 /*******************************************@dataType****************************************************
  * @name:PUSHBUTTON 

@@ -24,21 +24,21 @@ pushButton_state pushButton_pushButtonState(PUSHBUTTON pb)
         case pushButton_pullUp: 
             if(DIO_pinRead(pb.port,pb.pin))
             {
-                returnValue = RELEASED;
+                returnValue = pushButtonReleased;
             }
             else
             {
-                returnValue = PRESSED;
+                returnValue = pushButtonPressed;
             }
             break;
         case pushButton_pullDown: 
             if(DIO_pinRead(pb.port,pb.pin))
             {
-                returnValue = PRESSED;
+                returnValue = pushButtonPressed;
             }
             else
             {
-                returnValue = RELEASED;
+                returnValue = pushButtonReleased;
             }
             break;    
     }

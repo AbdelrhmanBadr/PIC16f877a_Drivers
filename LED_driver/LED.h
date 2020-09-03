@@ -18,6 +18,7 @@ typedef enum
 {
     LED_off,
     LED_on,
+    LED_toggle,        
 }LED_state;
 
 /*

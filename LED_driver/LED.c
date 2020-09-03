@@ -31,6 +31,7 @@ void LED_ledState(LED myLed , LED_state myLedState)
             {
                 case LED_off :DIO_pinWrite(myLed.port,myLed.pin,LOW);  break;
                 case LED_on  :DIO_pinWrite(myLed.port,myLed.pin,HIGH); break;
+                case LED_toggle:DIO_pinWrite(myLed.port,myLed.pin,!DIO_pinRead(myLed.port,myLed.pin)); break;
             }
             break;
         case LED_reverse:
@@ -38,6 +39,8 @@ void LED_ledState(LED myLed , LED_state myLedState)
             {
                 case LED_off : DIO_pinWrite(myLed.port,myLed.pin,HIGH); break;
                 case LED_on  : DIO_pinWrite(myLed.port,myLed.pin,LOW); break;
+                case LED_toggle:DIO_pinWrite(myLed.port,myLed.pin,!DIO_pinRead(myLed.port,myLed.pin)); break;
+                
             }
             break;    
     }
